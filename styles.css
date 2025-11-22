@@ -207,6 +207,12 @@ nav.scrolled {
   padding-right: 50px;
 }
 
+.new-arrival-tag {
+  color: var(--text-grey);
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
 .drop-content h2 {
   font-size: 3.5rem;
   margin-bottom: 20px;
@@ -226,9 +232,9 @@ nav.scrolled {
   flex: 1 1 500px;
   height: auto;
   overflow: hidden;
-  border-radius: 4px;
+  /* Removed border-radius from container */
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .drop-image img {
@@ -237,8 +243,7 @@ nav.scrolled {
   max-height: 800px;
   object-fit: contain;
   transition: transform 0.5s ease;
-  border: 1px solid #333;
-  border-radius: 4px;
+  /* REMOVED BORDER AND BORDER-RADIUS */
 }
 
 .drop-image:hover img {
@@ -407,62 +412,61 @@ footer {
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-  
   /* Hamburger Menu Logic */
   .burger {
-      display: block;
-      z-index: 1001;
+    display: block;
+    z-index: 1001;
   }
 
   .nav-links {
-      position: fixed;
-      right: 0px;
-      height: 100vh;
-      top: 0;
-      background-color: var(--primary-color);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      transform: translateX(100%); /* Hidden by default */
-      transition: transform 0.4s ease-in-out;
-      z-index: 1000;
+    position: fixed;
+    right: 0px;
+    height: 100vh;
+    top: 0;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transform: translateX(100%); /* Hidden by default */
+    transition: transform 0.4s ease-in-out;
+    z-index: 1000;
   }
 
   .nav-links li {
-      margin: 20px 0;
-      opacity: 0;
+    margin: 20px 0;
+    opacity: 0;
   }
 
   .nav-links a {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .nav-active {
-      transform: translateX(0%);
+    transform: translateX(0%);
   }
 
   /* Animation for burger turning into X */
   .toggle .line1 {
-      transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(-45deg) translate(-5px, 6px);
   }
   .toggle .line2 {
-      opacity: 0;
+    opacity: 0;
   }
   .toggle .line3 {
-      transform: rotate(45deg) translate(-5px, -6px);
+    transform: rotate(45deg) translate(-5px, -6px);
   }
 
   @keyframes navLinkFade {
-      from {
-          opacity: 0;
-          transform: translateX(50px);
-      }
-      to {
-          opacity: 1;
-          transform: translateX(0);
-      }
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   /* General Mobile Styles */
@@ -475,33 +479,33 @@ footer {
   .hero-content h1 {
     font-size: 3.5rem;
   }
-  
+
   .drop-content {
-      padding-right: 0;
-      margin-bottom: 40px;
-      text-align: center;
+    padding-right: 0;
+    margin-bottom: 40px;
+    text-align: center;
   }
   .drop-image {
-      height: auto; 
+    height: auto;
   }
 
   /* Mobile Product Grid - 2 Columns */
   .product-grid {
-      grid-template-columns: 1fr 1fr; 
-      gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
-  
+
   #collection .image-container {
-      height: 200px;
+    height: 200px;
   }
 
   /* Mobile Lookbook Grid - 2 Columns */
   .lookbook-grid {
-      grid-template-columns: 1fr 1fr; 
-      gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
   .lookbook-card {
-      height: 250px;
+    height: 250px;
   }
 }
