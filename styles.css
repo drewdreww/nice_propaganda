@@ -103,11 +103,10 @@ nav.scrolled {
   align-items: center;
   text-align: center;
   position: relative;
-  /* Updated Path */
   background: url("assets/hero2.png");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; /* Parallax effect */
   overflow: hidden;
 }
 
@@ -232,7 +231,6 @@ nav.scrolled {
   flex: 1 1 500px;
   height: auto;
   overflow: hidden;
-  /* Removed border-radius from container */
   display: flex;
   justify-content: center;
 }
@@ -243,7 +241,6 @@ nav.scrolled {
   max-height: 800px;
   object-fit: contain;
   transition: transform 0.5s ease;
-  /* REMOVED BORDER AND BORDER-RADIUS */
 }
 
 .drop-image:hover img {
@@ -412,6 +409,12 @@ footer {
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
+  /* HERO BACKGROUND BUG FIX */
+  #hero {
+    background-attachment: scroll; /* Forces normal scrolling on mobile to fix zoom bug */
+    background-position: center top;
+  }
+
   /* Hamburger Menu Logic */
   .burger {
     display: block;
